@@ -105,11 +105,11 @@ def main():
             var1, var2, var3, net_force_symbolic,weight_head,idp = calculate_variables(mass, angle,option)
             
             # Display calculated variables
-            st.write(f"Weight of Head F(head): {var1} Newton")
+            st.write(f"Weight of Head F(head): **{var1}** Newton")
             st.latex(f"{weight_head}")
-            st.write(f"Net Force on disc: {var2} Newton")
+            st.write(f"Net Force on disc: **{var2}** Newton")
             st.latex(f"{net_force_symbolic}")
-            st.write(f"Intradiscal pressure: {var3} MPa")
+            st.write(f"Intradiscal pressure: **{var3}** MPa")
             st.latex(f"{idp}")
             st.latex("CF = 0.66 (correction factor)")
         except ValueError:
