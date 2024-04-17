@@ -10,14 +10,7 @@ def calculate_variables(mass, angle, option):
     angle_rad = math.radians(16.3 + angle)
     alpha_rad = math.radians(16.3)
     
-    # Perform calculations here
-    var1 = mass * 9.8 * 0.0826
-    Fm = var1 * math.sin(angle_rad) * (11/6)
-    Nr = Fm + var1 * math.cos(alpha_rad)
-    Tr = var1 * math.sin(alpha_rad)
-    nrsquare = Nr ** 2
-    trsquare = Tr ** 2
-    var2 = math.sqrt(nrsquare + trsquare)
+    
    
     
     # Symbolic representation of net force on disc
@@ -25,12 +18,38 @@ def calculate_variables(mass, angle, option):
     weight_head = r"F (head) = F_w * 9.8 * 0.0826"
     if(option == "C2/C3"):
         idp = r"IDP = F_n / (Area (C2/C3) * CF )"
+
+        var1 = mass * 9.8 * 0.0826
+        Fm = var1 * math.sin(angle_rad) * (13/6)
+        Nr = Fm + var1 * math.cos(alpha_rad)
+        Tr = var1 * math.sin(alpha_rad)
+        nrsquare = Nr ** 2
+        trsquare = Tr ** 2
+        var2 = math.sqrt(nrsquare + trsquare)
         var3 = var2 / (1000000*0.000190 * 0.66)
+        
     elif (option == "C4/C5"):
         idp = r"IDP = F_n / (Area (C4/C5) * CF )"
+
+        var1 = mass * 9.8 * 0.0826
+        Fm = var1 * math.sin(angle_rad) * (15/6)
+        Nr = Fm + var1 * math.cos(alpha_rad)
+        Tr = var1 * math.sin(alpha_rad)
+        nrsquare = Nr ** 2
+        trsquare = Tr ** 2
+        var2 = math.sqrt(nrsquare + trsquare)
         var3 = var2 / (1000000*0.000240 * 0.66)
+        
     else:
         idp = r"IDP = F_n / (Area (C6/C7) * CF )"
+
+        var1 = mass * 9.8 * 0.0826
+        Fm = var1 * math.sin(angle_rad) * (17/6)
+        Nr = Fm + var1 * math.cos(alpha_rad)
+        Tr = var1 * math.sin(alpha_rad)
+        nrsquare = Nr ** 2
+        trsquare = Tr ** 2
+        var2 = math.sqrt(nrsquare + trsquare)
         var3 = var2 / (1000000*0.000460 * 0.66)
     
     var1 = round(var1, 3)
