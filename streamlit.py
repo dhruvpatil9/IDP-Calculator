@@ -114,5 +114,4 @@ def main():
             st.latex("CF = 0.66 (correction factor)")
         except ValueError:
             st.error("Please enter valid numerical values for mass and angle.")
-if __name__ == "__main__":
-    main()
+main()
