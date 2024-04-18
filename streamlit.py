@@ -4,7 +4,8 @@ import math
 st.set_page_config(
   page_title="Σ IDP",
   page_icon = '☠',
-  layout="wide"
+  layout="wide",
+  initial_sidebar_state='expanded'
 )
 
 
