@@ -4,8 +4,7 @@ import math
 st.set_page_config(
   page_title="Σ IDP",
   page_icon = '☠',
-  layout="wide",
-  initial_sidebar_state='expanded'
+  layout="wide"
 )
 
 
@@ -23,13 +22,13 @@ def calculate_variables(mass, angle, option):
    
     
     # Symbolic representation of net force on disc
-    net_force_symbolic = r"F_n^2 = \sqrt{N_r^2 + T_r^2}"
-    weight_head = r"F (head) = F_w * 9.8 * 0.0826"
+    net_force_symbolic = r"F_n = \sqrt{N_r^2 + T_r^2}"
     if(option == "C2/C3"):
         idp = r"IDP = F_n / (Area (C2/C3) * CF )"
+        weight_head = r"F (head) = F_w * 9.8 * 0.08"
 
-        var1 = mass * 9.8 * 0.0826
-        Fm = var1 * math.sin(angle_rad) * (13/6)
+        var1 = mass * 9.8 * 0.08
+        Fm = var1 * ((math.sin(angle_rad) * 7) + 1.5)/6
         Nr = Fm + var1 * math.cos(alpha_rad)
         Tr = var1 * math.sin(alpha_rad)
         nrsquare = Nr ** 2
@@ -39,9 +38,10 @@ def calculate_variables(mass, angle, option):
         
     elif (option == "C4/C5"):
         idp = r"IDP = F_n / (Area (C4/C5) * CF )"
+        weight_head = r"F (head) = F_w * 9.8 * 0.082"
 
-        var1 = mass * 9.8 * 0.0826
-        Fm = var1 * math.sin(angle_rad) * (15/6)
+        var1 = mass * 9.8 * 0.082
+        Fm = var1 * ((math.sin(angle_rad) * 11) + 1.5)/6
         Nr = Fm + var1 * math.cos(alpha_rad)
         Tr = var1 * math.sin(alpha_rad)
         nrsquare = Nr ** 2
@@ -51,9 +51,10 @@ def calculate_variables(mass, angle, option):
         
     else:
         idp = r"IDP = F_n / (Area (C6/C7) * CF )"
+        weight_head = r"F (head) = F_w * 9.8 * 0.084"
 
-        var1 = mass * 9.8 * 0.0826
-        Fm = var1 * math.sin(angle_rad) * (17/6)
+        var1 = mass * 9.8 * 0.084
+        Fm = var1 * ((math.sin(angle_rad) * 15) + 1.5)/6
         Nr = Fm + var1 * math.cos(alpha_rad)
         Tr = var1 * math.sin(alpha_rad)
         nrsquare = Nr ** 2
@@ -107,7 +108,7 @@ def main():
     with col2:
         # User inputs as text
         mass = st.text_input("Enter your Weight (in kgs) (0-150)", "75")
-        angle = st.text_input("Enter flexion/extension angle β (in degrees) (-70 to +90)", "0")
+        angle = st.text_input("Enter flexion/extension angle β (in degrees) (-60 to +70)", "0")
         def evaluate_trigger():
             st.session_state['evaluate_now'] = True
 
@@ -129,10 +130,10 @@ def main():
 <p><span style="color: gray;">Net Force on disc: </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var2}</span> <span style="color: gray;">Newton</span></p>
 """, unsafe_allow_html=True)
                 st.markdown(f"""
-<p><span style="color: gray;">Intradiscal pressure (IDP): </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var3}</span> <span style="color: gray;">MPa</span></p>
+<p><span style="color: gray;">Intradiscal pressure: </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var3}</span> <span style="color: gray;">MPa</span></p>
 """, unsafe_allow_html=True)
                 # st.write(f" :gray[] :rainbow[{var2}] :gray[Newton]")
-                # st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
+                # st.write(f" :gray[Intradiscal pressure (IDP):] :rainbow[{var3}] :gray[MPa]")
                 st.session_state['evaluate_now'] = False
                 st.toast("Success")
             else:
