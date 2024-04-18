@@ -101,7 +101,7 @@ def main():
     col1, col2 = st.columns([2, 1])
     with col1:
         st.title("Intradiscal Pressure Calculator")
-        st.image(image_path, width=700)
+        st.image(image_path, width=500)
     
     # User inputs in the other half of the window
     with col2:
