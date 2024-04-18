@@ -7,6 +7,8 @@ st.set_page_config(
   layout="wide"
 )
 
+
+
 # Function to calculate variables based on inputs
 def calculate_variables(mass, angle, option):
     # Convert inputs to float
@@ -119,7 +121,7 @@ def main():
             if st.session_state['evaluate_now']:
                 st.markdown(f" :gray[Weight of Head F(head):] :rainbow[{var1}] :gray[Newton]")
                 st.write(f" :gray[Net Force on disc:] :rainbow[{var2}] :gray[Newton]")
-                st.write(f" :gray[Intradiscal pressure (IDP):] :rainbow[{var3}] :gray[MPa]")
+                st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
                 st.session_state['evaluate_now'] = False
                 st.toast("Success")
             else:
