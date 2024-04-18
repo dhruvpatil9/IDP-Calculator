@@ -129,7 +129,7 @@ def main():
 <p><span style="color: gray;">Net Force on disc: </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var2}</span> <span style="color: gray;">Newton</span></p>
 """, unsafe_allow_html=True)
                 st.markdown(f"""
-<p><span style="color: gray;">Intradiscal pressure: </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var3}</span> <span style="color: gray;">MPa</span></p>
+<p><span style="color: gray;">Intradiscal pressure (IDP): </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var3}</span> <span style="color: gray;">MPa</span></p>
 """, unsafe_allow_html=True)
                 # st.write(f" :gray[] :rainbow[{var2}] :gray[Newton]")
                 # st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
