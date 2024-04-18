@@ -1,6 +1,12 @@
 import streamlit as st
 import math
 
+st.set_page_config(
+  page_title="Σ IDP",
+  page_icon = '☠',
+  layout="wide"
+)
+
 # Function to calculate variables based on inputs
 def calculate_variables(mass, angle, option):
     # Convert inputs to float
@@ -58,12 +64,11 @@ def calculate_variables(mass, angle, option):
 
     return var1, var2, var3, net_force_symbolic,weight_head,idp
 
+if 'evaluate_now' not in st.session_state:
+    st.session_state['evaluate_now'] = False
+
 # Main function for Streamlit app
-def main():
-    # Set layout to fixed width
-    st.set_page_config(layout="wide")
-    
-    st.title("Intradiscal Pressure Calculator")
+def main(): 
     
     # Increase sidebar width
     st.markdown(
@@ -92,6 +97,7 @@ def main():
     # Display image in half of the window
     col1, col2 = st.columns([2, 1])
     with col1:
+        st.title("Intradiscal Pressure Calculator")
         st.image(image_path, width=700)
     
     # User inputs in the other half of the window
@@ -99,19 +105,35 @@ def main():
         # User inputs as text
         mass = st.text_input("Enter your Weight (in kgs) (0-150)", "75")
         angle = st.text_input("Enter flexion/extension angle β (in degrees) (-70 to +90)", "0")
+        def evaluate_trigger():
+            st.session_state['evaluate_now'] = True
+
+        st.button("Evaluate",on_click = evaluate_trigger)
         
         # Calculate variables
         try:
             var1, var2, var3, net_force_symbolic,weight_head,idp = calculate_variables(mass, angle,option)
             
             # Display calculated variables
-            st.write(f"Weight of Head F(head): **{var1}** Newton")
-            st.latex(f"{weight_head}")
-            st.write(f"Net Force on disc: **{var2}** Newton")
-            st.latex(f"{net_force_symbolic}")
-            st.write(f"Intradiscal pressure: **{var3}** MPa")
-            st.latex(f"{idp}")
-            st.latex("CF = 0.66 (correction factor)")
+            st.divider()
+            if st.session_state['evaluate_now']:
+                st.markdown(f" :gray[Weight of Head F(head):] :rainbow[{var1}] :gray[Newton]")
+                st.write(f" :gray[Net Force on disc:] :rainbow[{var2}] :gray[Newton]")
+                st.write(f" :gray[Intradiscal pressure (IDP):] :rainbow[{var3}] :gray[MPa]")
+                st.session_state['evaluate_now'] = False
+                st.toast("Success")
+            else:
+                st.caption("Click on Evaluate button 👆")
+
+                
+
+            st.divider()
+            with st.popover("Show Formula"):
+                st.latex(f"{weight_head}")
+                st.latex(f"{net_force_symbolic}")
+                st.latex(f"{idp}")
+                st.latex("CF = 0.66 (correction factor)")
         except ValueError:
             st.error("Please enter valid numerical values for mass and angle.")
-main()
+if __name__ == "__main__":
+    main()
