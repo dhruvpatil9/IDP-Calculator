@@ -123,7 +123,7 @@ def main():
                 st.write(f" :gray[Net Force on disc:] :rainbow[{var2}] :gray[Newton]")
                 st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
                 st.session_state['evaluate_now'] = False
-                st.toast("Success")
+         
             else:
                 st.caption("Click on Evaluate button 👆")
 
