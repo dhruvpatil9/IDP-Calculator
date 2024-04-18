@@ -119,11 +119,21 @@ def main():
             # Display calculated variables
             st.divider()
             if st.session_state['evaluate_now']:
-                st.markdown(f" :gray[Weight of Head F(head):] :rainbow[{var1}] :gray[Newton]")
-                st.write(f" :gray[Net Force on disc:] :rainbow[{var2}] :gray[Newton]")
-                st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
+                # st.markdown(f" :gray[Weight of Head F(head):] :rainbow[{var1}] :gray[Newton]")
+                st.markdown(f"""
+<p><span style="color: gray;">Weight of Head F(head): </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var1}</span> <span style="color: gray;">Newton</span></p>
+""", unsafe_allow_html=True)
+                
+                st.markdown(f"""
+<p><span style="color: gray;">Net Force on disc: </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var2}</span> <span style="color: gray;">Newton</span></p>
+""", unsafe_allow_html=True)
+                st.markdown(f"""
+<p><span style="color: gray;">Intradiscal pressure: </span><span style="color: orange; font-weight: bold; font-size: 2em;">{var3}</span> <span style="color: gray;">MPa</span></p>
+""", unsafe_allow_html=True)
+                # st.write(f" :gray[] :rainbow[{var2}] :gray[Newton]")
+                # st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
                 st.session_state['evaluate_now'] = False
-         
+                st.toast("Success")
             else:
                 st.caption("Click on Evaluate button 👆")
 
