@@ -123,21 +123,14 @@ def main():
                 st.write(f" :gray[Net Force on disc:] :rainbow[{var2}] :gray[Newton]")
                 st.write(f" :gray[Intradiscal pressure:] :rainbow[{var3}] :gray[MPa]")
                 st.session_state['evaluate_now'] = False
+                st.toast("Success")
             else:
                 st.caption("Click on Evaluate button 👆")
 
                 
 
             st.divider()
-            st.markdown("""
-            <style>
-            .popover-content {
-                max-width: 400px;
-            }
-            </style>
-            """, unsafe_allow_html=True)
-
-            with st.expander("Show Formula"):
+            with st.popover("Show Formula"):
                 st.latex(f"{weight_head}")
                 st.latex(f"{net_force_symbolic}")
                 st.latex(f"{idp}")
