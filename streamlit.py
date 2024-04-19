@@ -28,7 +28,7 @@ def calculate_variables(mass, angle, option):
         weight_head = r"F (head) = F_w * 9.8 * 0.08"
 
         var1 = mass * 9.8 * 0.08
-        Fm = var1 * ((math.sin(angle_rad) * 7) + 1.5)/6
+        Fm = var1 * ((math.sin(angle_rad) * 5) + 1.5)/6
         Nr = Fm + var1 * math.cos(alpha_rad)
         Tr = var1 * math.sin(alpha_rad)
         nrsquare = Nr ** 2
@@ -41,7 +41,7 @@ def calculate_variables(mass, angle, option):
         weight_head = r"F (head) = F_w * 9.8 * 0.082"
 
         var1 = mass * 9.8 * 0.082
-        Fm = var1 * ((math.sin(angle_rad) * 11) + 1.5)/6
+        Fm = var1 * ((math.sin(angle_rad) * 7) + 1.5)/6
         Nr = Fm + var1 * math.cos(alpha_rad)
         Tr = var1 * math.sin(alpha_rad)
         nrsquare = Nr ** 2
@@ -54,7 +54,7 @@ def calculate_variables(mass, angle, option):
         weight_head = r"F (head) = F_w * 9.8 * 0.084"
 
         var1 = mass * 9.8 * 0.084
-        Fm = var1 * ((math.sin(angle_rad) * 15) + 1.5)/6
+        Fm = var1 * ((math.sin(angle_rad) * 9) + 1.5)/6
         Nr = Fm + var1 * math.cos(alpha_rad)
         Tr = var1 * math.sin(alpha_rad)
         nrsquare = Nr ** 2
