@@ -15,7 +15,7 @@ def calculate_variables(mass, angle, option):
     mass = float(mass)
     angle = float(angle)
     
-    angle_rad = math.radians(16.3 + angle)
+    angle_rad = math.radians(abs(16.3 + angle) )
     alpha_rad = math.radians(16.3)
     
     
