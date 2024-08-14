@@ -1,21 +1,31 @@
+Here's the updated README file with the repository URL included:
+
+```markdown
 # Intradiscal Pressure Calculator
 
-Welcome to the Intradiscal Pressure Calculator! This application, built with Streamlit, helps calculate the intradiscal pressure (IDP) based on user inputs such as weight and angle. It provides graphical representation for different vertebrae locations and displays the results of the calculations.
+Welcome to the Intradiscal Pressure Calculator! This Streamlit application helps you calculate the intradiscal pressure (IDP) based on your weight and angle inputs. The application provides graphical representations for different vertebrae locations and displays the results along with detailed calculations.
 
 ## Features
 
-- **Calculate Intradiscal Pressure (IDP):** Enter your weight and angle to calculate IDP based on selected vertebrae location.
-- **Visual Representation:** View images for different vertebrae locations to understand the context of the calculations.
-- **Interactive Interface:** Input values and instantly see the results along with the underlying formulas.
+- **Calculate Intradiscal Pressure (IDP):** Input your weight and angle to calculate IDP based on selected vertebrae locations.
+- **Visual Representation:** View images corresponding to different vertebrae locations.
+- **Interactive Interface:** Enter values to see results and view underlying formulas.
+
+## Files
+
+- **`README.md`**: This file.
+- **`requirements.txt`**: Contains the list of Python packages required to run the application.
+- **`streamlit.py`**: The main Streamlit application script.
+- **`1.png`, `2.png`, `3.png`**: Images showing different vertebrae locations (C2/C3, C4/C5, C6/C7).
 
 ## Getting Started
 
 ### Prerequisites
 
-Ensure you have Python installed along with the necessary packages. You can install the required packages using `pip`:
+Make sure you have Python installed. You can install the required packages by running:
 
 ```bash
-pip install streamlit
+pip install -r requirements.txt
 ```
 
 ### Running the Application
@@ -23,18 +33,18 @@ pip install streamlit
 1. **Clone the Repository:**
 
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/dhruvpatil9/IDP-Calculator.git
+    cd IDP-Calculator
     ```
 
 2. **Navigate to the Application Directory:**
 
-    Ensure you are in the directory where `app.py` is located.
+    Ensure you are in the directory where `streamlit.py` is located.
 
 3. **Run the Streamlit Application:**
 
     ```bash
-    streamlit run app.py
+    streamlit run streamlit.py
     ```
 
     This will start the Streamlit server and open the application in your default web browser.
@@ -64,25 +74,21 @@ The application will display:
 
 The following formulas are used in the calculations:
 
-Weight of Head:
+- **Weight of Head:**
 
-<p> <i> F(head) = F<sub>w</sub> × g × constant </i> </p>
-Net Force on Disc:
+  <p><i>F(head) = F<sub>w</sub> × g × constant</i></p>
 
-<p> <i> F<sub>n</sub> = √(N<sub>r</sub><sup>2</sup> + T<sub>r</sub><sup>2</sup>) </i> </p>
-Intradiscal Pressure:
+- **Net Force on Disc:**
 
-<p> <i> IDP = F<sub>n</sub> / (Area × CF) </i> </p>
-where CF is the correction factor (0.66).
+  <p><i>F<sub>n</sub> = √(N<sub>r</sub><sup>2</sup> + T<sub>r</sub><sup>2</sup>)</i></p>
 
-## Files
+- **Intradiscal Pressure:**
 
-- **`app.py`:** The main application script.
-- **`1.png`, `2.png`, `3.png`:** Images showing different vertebrae locations (C2/C3, C4/C5, C6/C7).
+  <p><i>IDP = F<sub>n</sub> / (Area × CF)</i></p>
+
+  where CF is the correction factor (0.66).
 
 ## Troubleshooting
 
 - **Invalid Input:** Ensure that numerical values for weight and angle are valid.
-- **Errors in Display:** Check the image file paths and ensure they are correctly placed in the directory.
-
-
+- **Errors in Display:** Verify that image files (`1.png`, `2.png`, `3.png`) are correctly placed in the directory.
