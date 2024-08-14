@@ -1,4 +1,4 @@
-Intradiscal Pressure Calculator
+#Intradiscal Pressure Calculator
 
 Welcome to the Intradiscal Pressure Calculator! This application, built with Streamlit, helps calculate the intradiscal pressure (IDP) based on user inputs such as weight and angle. It provides graphical representation for different vertebrae locations and displays the results of the calculations.
 
@@ -85,10 +85,4 @@ The following formulas are used in the calculations:
 - **Invalid Input:** Ensure that numerical values for weight and angle are valid.
 - **Errors in Display:** Check the image file paths and ensure they are correctly placed in the directory.
 
-## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to modify the README to better fit your needs or project specifics!
