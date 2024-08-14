@@ -64,16 +64,16 @@ The application will display:
 
 The following formulas are used in the calculations:
 
-- **Weight of Head:**
-  - \( F(head) = F_w \times g \times \text{constant} \)
-  
-- **Net Force on Disc:**
-  - \( F_n = \sqrt{N_r^2 + T_r^2} \)
+Weight of Head:
 
-- **Intradiscal Pressure:**
-  - \( IDP = \frac{F_n}{\text{Area} \times CF} \)
+<p> <i> F(head) = F<sub>w</sub> × g × constant </i> </p>
+Net Force on Disc:
 
-  where \( CF \) is the correction factor (0.66).
+<p> <i> F<sub>n</sub> = √(N<sub>r</sub><sup>2</sup> + T<sub>r</sub><sup>2</sup>) </i> </p>
+Intradiscal Pressure:
+
+<p> <i> IDP = F<sub>n</sub> / (Area × CF) </i> </p>
+where CF is the correction factor (0.66).
 
 ## Files
 
